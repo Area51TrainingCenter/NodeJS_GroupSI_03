@@ -35,7 +35,7 @@ Dejamos de enviar textos desde el servidor y enviamos un archivo estático html.
 Enviamos (servimos) archivos estáticos html diferentes dependiendo de la url. De esta forma empezamos a enviar información diferente a los usuarios aunque aún ésta no es dinámica.
 
 #### *11-express*
-Aprendemos a utilizar el npm para instalar paquetes locales (npm install "paquete") y globales (npm install "paquete" -g). Aprendemos a generar el package.json usando "npm init" y cómo salvar los paquetes instalados dentro de éste (npm install "paquete" --save).
+* Aprendemos a utilizar el npm para instalar paquetes locales (npm install "paquete") y globales (npm install "paquete" -g). Aprendemos a generar el package.json usando "npm init" y cómo salvar los paquetes instalados dentro de éste (npm install "paquete" --save).
 * Aprendemos lo básico de ExpressJS para levantar un servidor y servir páginas web dependiendo de las rutas usando menos códigos. También aprendemos cómo crear un directorio público en ExpressJS, cómo crear vistas y cómo renderizar las mismas con információn dinámica que por el momento la hemos generado en el mismo código pero que podría venir de otras fuentes como consultas a bases de datos, webservices, api's restful, etc..
 
 ## **Otros**
