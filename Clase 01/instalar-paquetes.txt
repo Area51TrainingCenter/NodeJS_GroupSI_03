@@ -1,0 +1,9 @@
+Para instalar paquetes o librerías o módulos
+
+npm install <nombre libreria>  //instala localmente
+npm install -g <nombre libreria>  //instala globalmente
+
+npm init //Para crear el package.json
+npm install <nombre libreria> --save  //Para indicar al package.json que la libreria se ha instalado
+
+npm install //Instala las librerías indicadas en el package.json

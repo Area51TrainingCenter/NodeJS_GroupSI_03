@@ -1,0 +1,19 @@
+{
+  "name": "11-express",
+  "version": "1.0.0",
+  "description": "proyecto express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Sergio",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "supervisor": "^0.9.1"
+  }
+}
