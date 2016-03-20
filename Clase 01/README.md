@@ -3,7 +3,7 @@ Instructor: Sergio Hidalgo Cáceres
 
 ## **Clase 01**
 
-* 01-basico
+#### *01-basico*
 Podemos usar lo que ya sabemos de JavaScript
 
 * 02-lectura-archivo
