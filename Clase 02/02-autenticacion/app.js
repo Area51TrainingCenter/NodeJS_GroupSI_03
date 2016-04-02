@@ -27,6 +27,11 @@ function fnLogin(req, res) {
 	}
 }
 
+function fnLogout(req, res) {
+	req.session.user=null;
+	res.redirect("/");
+}
+
 function fnListaUsuarios(req, res) {
 	res.render("lista");
 }
@@ -52,6 +57,7 @@ app.set("view engine", motorVistas);
 app.get("/", fnFormLogin);
 app.post("/", fnLogin);
 app.get("/lista-usuarios", fnValidar, fnListaUsuarios);
+app.get("/logout", fnLogout);
 app.listen(3000, fnEjecutando);
 
 
