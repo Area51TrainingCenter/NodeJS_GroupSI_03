@@ -10,9 +10,9 @@ controlador.validar = function(req, res){
 
 	modelo.validar(registro, function(err, registros){
 		if(registros.length==0){
-			res.send("No existe el usuario");
+			res.redirect("/");
 		} else {
-			res.send("Bienvenido");
+			res.render("home");
 		}
 	})
 };
