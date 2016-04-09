@@ -1,0 +1,12 @@
+.tabDatos {
+	width:100%;
+	display: none;
+}
+
+.tabDatos#tabGeneral {
+	display: block;
+}
+
+form {
+	overflow: hidden;
+}
