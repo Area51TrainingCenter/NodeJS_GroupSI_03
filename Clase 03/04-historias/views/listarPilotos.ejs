@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de Historias Médicas</title>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/estilos-comunes.css">	
+  <link rel="stylesheet" type="text/css" href="/css/estilos-historias.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Sistema de Historias Médicas</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="/historias">Historias</a></li>
+            <li><a href="/reportes">Reportes</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tablas <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/medicos">Médicos</a></li>
+                <li><a href="/enfermeros">Enfermeros</a></li>
+                <li><a href="/pilotos">Pilotos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    
+    <div class="container">
+      <h1>Pilotos</h1>
+      <a href="/pilotos/formulario" class="btn btn-info">Insertar</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Apellidos</th>
+             <th>Nombres</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% registros.forEach(function(reg){ %>
+          <tr>
+            <td><%= reg.id %></td>
+            <td><%= reg.capellidos %></td>
+            <td><%= reg.cnombres %></td>
+            <td><a href="/pilotos/editar/<%= reg.id %>" class="btn btn-success">Editar</a>&nbsp;<a href="/pilotos/eliminar/<%= reg.id %>" class="btn btn-danger">Eliminar</a></td>
+          </tr>      
+          <% }) %>  
+        </tbody>        
+      </table>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
+
+</body>
+</html>

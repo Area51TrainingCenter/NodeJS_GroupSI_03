@@ -7,7 +7,8 @@ controlador.listar = function(req, res) {
 		var datos = {
 			registros: registros
 		};
-		res.render("listadoMedicos", datos);
+		// res.render("listarMedicos", datos);
+		res.json(registros);
 	})
 }
 
@@ -49,8 +50,10 @@ controlador.editar = function(req, res) {
 		if(err) {
 			console.log(err);
 		} else {
-			var registro = registros[0];
-			res.render("edicionMedico", registro);
+			var datos = {
+				registro: registros[0]
+			};
+			res.render("editarMedico", datos);
 		}
 	})
 }
@@ -70,3 +73,9 @@ controlador.actualizar = function(req, res){
 		}
 	})
 }
+
+controlador.mostrarFormulario = function(req, res) {
+	res.render("insertarMedico");
+}
+
+module.exports = controlador;
