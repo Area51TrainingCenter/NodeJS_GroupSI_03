@@ -12,6 +12,7 @@ var medicos = require("./routes/medicos");
 var enfermeros = require("./routes/enfermeros");
 var pilotos = require("./routes/pilotos");
 var companias = require("./routes/companias");
+var historias = require("./routes/historias");
 
 
 var app = express();
@@ -35,6 +36,7 @@ app.use("/medicos", medicos);
 app.use("/enfermeros", enfermeros);
 app.use("/pilotos", pilotos);
 app.use("/companias", companias);
+app.use("/historias", historias);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
