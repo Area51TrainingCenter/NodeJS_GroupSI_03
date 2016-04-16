@@ -1,4 +1,10 @@
 var modelo = require("../modelos/modeloHistorias");
+var modeloCompania = require("../modelos/modeloCompanias");
+var modeloDistrito = require("../modelos/modeloDistritos");
+var modeloDiagnostico = require("../modelos/modeloDiagnosticos");
+var modeloMedico = require("../modelos/modeloMedicos");
+var modeloEnfermero = require("../modelos/modeloEnfermeros");
+
 
 var controlador = {};
 
@@ -69,7 +75,52 @@ controlador.actualizar = function(req, res){
 }
 
 controlador.mostrarFormulario = function(req, res) {
-	res.render("insertarHistoria");
+	var datos = {};
+
+
+	modeloCompania.listarQ(function(err, registros){
+		var datos = {};
+		if(err) {console.log(err)}
+		else {
+
+			modeloCompania.listarQ()
+				.then(function(registros){
+					datos.companias = registros;
+					console.log("se cumplió");
+					return modeloDistrito.listarQ();
+				})
+				.then(function(registros) {
+					datos.distritos = registros;
+					return modeloDiagnostico.listarQ();
+				})
+				.then(function(registros){
+					datos.diagnosticos = registros;
+					return modeloMedico.listarQ();
+				})
+				.then(function(registros) {
+					datos.medicos = registros;
+					return modeloEnfermero.listarQ();
+				})
+				.then(function(registros){
+					datos.enfemeros = registros;
+					res.render("insertarHistoria", datos);
+				})
+				.catch(function(err){
+					console.log(err);
+				})
+
+
+		}
+	});
+	
 }
 
 module.exports = controlador;
+
+
+
+
+
+
+
+

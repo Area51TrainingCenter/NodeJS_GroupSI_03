@@ -6,6 +6,18 @@ modelo.listar = function(cb){
 	conexion.query("select * from enfermeros", cb);
 }
 
+modelo.listarQ = function(){
+	var deferred = q.defer();
+	conexion.query("select * from enfermeros", function(err, registros){
+		if(err) {
+			deferred.reject();	
+		} else {
+			deferred.resolve(registros);	
+		}
+	});
+	return deferred.promise;
+}
+
 modelo.insertar = function(registro, cb){
 	conexion.query("insert into enfermeros set ?", registro, cb)
 }

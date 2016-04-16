@@ -1,9 +1,23 @@
 var conexion = require("../conexiones/connMySQL");
+var q = require("q");
 
 var modelo = {};
 
 modelo.listar = function(cb){
 	conexion.query("select * from medicos", cb);
+}
+
+modelo.listarQ = function(){
+	var deferred = q.defer();
+	conexion.query("select * from medicos", function(err, registros){
+		if(err) {
+			deferred.reject();	
+		} else {
+			deferred.resolve(registros);	
+		}
+		
+	});
+	return deferred.promise;
 }
 
 modelo.insertar = function(registro, cb){

@@ -1,9 +1,26 @@
 var conexion = require("../conexiones/connMySQL");
+var q = require("q");
 
 var modelo = {};
 
 modelo.listar = function(cb){
 	conexion.query("select * from companias", cb);
+}
+
+modelo.listarQ = function(){
+	var deferred = q.defer();
+	conexion.query("select * from companias", function(err, registros){
+		if(err) {
+			console.log("rechazo");
+			deferred.reject();	
+		} else {
+			console.log(registros);
+			console.log(deferred);
+			deferred.resolve(registros);	
+		}
+	});
+	console.log("promesa de compañías");
+	return deferred.promise;
 }
 
 modelo.insertar = function(registro, cb){
