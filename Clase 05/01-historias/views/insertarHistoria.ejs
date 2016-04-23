@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Historias Médicas</title>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/estilos-comunes.css"> 
+  <link rel="stylesheet" type="text/css" href="/css/estilos-historias.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Sistema de Historias Médicas</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="/historias">Historias</a></li>
+            <li><a href="/reportes">Reportes</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tablas <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="/medicos">Médicos</a></li>
+                <li><a href="/enfermeros">Enfermeros</a></li>
+                <li><a href="/pilotos">Pilotos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    
+    <div class="container">
+      <h1>Historias Médicas</h1>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#tabGeneral">General</a></li>
+        <li role="presentation"><a href="#tabAtencion">Atención Médica</a></li>
+      </ul>
+      <br>
+      <br>
+
+      <form action="/historias/insertar" method="post">
+
+        <div class="tabDatos" id="tabGeneral">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>REQUERIMIENTO</strong>
+              </div>
+              <div class="panel-body">
+
+                <div class="form-group">
+                  <label>Número de historia</label>
+                  <input type="number" required class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Fecha</label>
+                  <input type="date" required class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Compañía</label>
+                  <select class="form-control">
+                    <option value="1">Nombre 01</option>
+                    <option value="2">Nombre 02</option>
+                    <option value="3">Nombre 03</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <label>Requerido</label>
+                  <input type="text" required class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Contratante</label>
+                  <input type="text" required class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Poliza</label>
+                  <input type="text" required class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Autorización</label>
+                  <input type="text" required class="form-control" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>PACIENTE</strong>
+              </div>
+              <div class="panel-body">
+                  <div class="form-group">
+                    <label>Apellido Paterno</label>
+                    <input type="text" required class="form-control" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Apellido Materno</label>
+                    <input type="text" required class="form-control" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Nombres</label>
+                    <input type="text" required class="form-control"/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Sexo</label>
+                    <select class="form-control">
+                      <option value="1">Hombre</option>
+                      <option value="2">Mujer</option>
+                    </select>
+                  </div>                
+
+                  <div class="form-group">
+                    <label>DNI</label>
+                    <input type="text" required class="form-control" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" required class="form-control" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Edad</label>
+                    <input type="number" required class="form-control" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Unidad edad</label>
+                    <select class="form-control">
+                      <option value="1">Años</option>
+                      <option value="2">Meses</option>
+                    </select>
+                  </div>                
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>OCURRENCIA</strong>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label>Dirección</label>
+                  <input type="text" required class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                  <label>Distrito</label>
+                  <select class="form-control">
+                    <option value="1">Distrito 01</option>
+                    <option value="2">Distrito 02</option>
+                    <option value="3">Distrito 03</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Referencia</label>
+                  <input type="text" required class="form-control"/>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabDatos" id="tabAtencion">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>DATOS PRINCIPALES</strong>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label>Diagnóstico</label>
+                  <select class="form-control">
+                    <option value="1">CIE 01</option>
+                    <option value="2">CIE 02</option>
+                    <option value="3">CIE 03</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Tipo de atención</label>
+                  <select class="form-control">
+                    <option value="1">Emergencia</option>
+                    <option value="2">Traslado</option>
+                    <option value="3">Consulta</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>RESPONSABLES</strong>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label>Médico</label>
+                  <select class="form-control">
+                    <option value="1">Médico 01</option>
+                    <option value="2">Médico 02</option>
+                    <option value="3">Médico 03</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Enfermero</label>
+                  <select class="form-control">
+                    <option value="1">Enfermero 01</option>
+                    <option value="2">Enfermero 02</option>
+                    <option value="3">Enfermero 03</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>            
+          </div>        
+
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>ANOTACIONES</strong>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <label>Síntomas</label>
+                  <textarea class="form-control" row="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Tratamiento</label>
+                  <textarea class="form-control" row=4></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Observaciones</label>
+                  <textarea class="form-control" row=4></textarea>
+                </div>
+
+              </div>
+            </div>
+         
+          </div>    
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-success pull-right">GRABAR</button> 
+        <a href="/historias/listar" class="btn btn-lg btn-info pull-left">REGRESAR</a>
+      </form>
+
+      <br>
+      <br>
+
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
+    <script src="/js/historias.js"></script> 
+</body>
+</html>
