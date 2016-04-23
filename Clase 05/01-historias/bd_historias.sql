@@ -30,6 +30,16 @@ CREATE TABLE `companias` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `companias`
+--
+
+LOCK TABLES `companias` WRITE;
+/*!40000 ALTER TABLE `companias` DISABLE KEYS */;
+INSERT INTO `companias` VALUES (1,'Rimac'),(2,'Pacífico'),(3,'Mapfre'),(4,'Colsanitas');
+/*!40000 ALTER TABLE `companias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `diagnosticos`
 --
 
@@ -42,6 +52,16 @@ CREATE TABLE `diagnosticos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `diagnosticos`
+--
+
+LOCK TABLES `diagnosticos` WRITE;
+/*!40000 ALTER TABLE `diagnosticos` DISABLE KEYS */;
+INSERT INTO `diagnosticos` VALUES (1,'CIE 01'),(2,'CIE 02'),(3,'CIE 03'),(4,'CIE 04'),(5,'CIE 05');
+/*!40000 ALTER TABLE `diagnosticos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `distritos`
@@ -58,6 +78,16 @@ CREATE TABLE `distritos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `distritos`
+--
+
+LOCK TABLES `distritos` WRITE;
+/*!40000 ALTER TABLE `distritos` DISABLE KEYS */;
+INSERT INTO `distritos` VALUES (1,'ATE'),(2,'PUEBLO LIBRE'),(3,'MAGDALENA'),(4,'SURQUILLO'),(5,'MIRAFLORES'),(6,'CHORRILLOS');
+/*!40000 ALTER TABLE `distritos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `enfermeros`
 --
 
@@ -71,6 +101,15 @@ CREATE TABLE `enfermeros` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `enfermeros`
+--
+
+LOCK TABLES `enfermeros` WRITE;
+/*!40000 ALTER TABLE `enfermeros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `enfermeros` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `historias`
@@ -111,6 +150,15 @@ CREATE TABLE `historias` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `historias`
+--
+
+LOCK TABLES `historias` WRITE;
+/*!40000 ALTER TABLE `historias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `historias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `medicos`
 --
 
@@ -124,6 +172,16 @@ CREATE TABLE `medicos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `medicos`
+--
+
+LOCK TABLES `medicos` WRITE;
+/*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
+INSERT INTO `medicos` VALUES (2,'Raúl','Rozas');
+/*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `pilotos`
@@ -141,6 +199,15 @@ CREATE TABLE `pilotos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `pilotos`
+--
+
+LOCK TABLES `pilotos` WRITE;
+/*!40000 ALTER TABLE `pilotos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pilotos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -151,9 +218,23 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cusuario` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ccontrasena` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cnombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `perfilid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `credsocial` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cfoto` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'shidalgo','123',NULL,NULL,NULL,NULL),(2,'mmorante','321',NULL,NULL,NULL,NULL),(3,NULL,NULL,'Sergio Hidalgo','10207316075033819','facebook','https://scontent.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/c7.0.50.50/p50x50/1381360_10201605690357771_543326674_n.jpg?oh=f11ebbf28fcab691e987cf08e0e0cc13&oe=57AE2457'),(4,NULL,NULL,'Sergio Hidalgo','10208063077348410','facebook','https://scontent.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/c7.0.50.50/p50x50/1381360_10201605690357771_543326674_n.jpg?oh=f11ebbf28fcab691e987cf08e0e0cc13&oe=57AE2457');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -164,4 +245,4 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-16 10:59:43
+-- Dump completed on 2016-04-23 11:16:31

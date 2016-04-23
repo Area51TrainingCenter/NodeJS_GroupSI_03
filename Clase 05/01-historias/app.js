@@ -11,6 +11,7 @@ var credenciales = require("./credenciales");
 var passport = require("passport");
 var passportLocal = require("passport-local").Strategy;
 var passportFacebook = require("passport-facebook").Strategy;
+var passportGoogle = require("passport-google-oauth2").Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
