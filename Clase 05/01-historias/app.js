@@ -100,14 +100,38 @@ passport.use(new passportFacebook(
             return done(null, registros[0]);
           }
         })
-
-
-
-
    }
-
 ));
 
+
+///////////////////////////////
+// ESTRATEGIA CON GOOGLE
+///////////////////////////////
+passport.use(new passportGoogle({
+  clientID      : credenciales.google.clavePublica,
+  clientSecret  : credenciales.google.clavePrivada,
+  callbackURL  : credenciales.google.rutaCB
+}, function(accessToken, refreshToken, profile, done) {
+
+      modelo.validarRedSocial(profile.id, function(err, registros){
+          if(err) {return done(err);}
+
+          if(registros.length==0) {
+            var obj = {};
+            obj.perfilid = profile.id;
+            obj.credsocial = profile.provider;
+            obj.cnombre = profile.displayName;
+            obj.cfoto = profile._json.image.url;
+
+            modelo.insertarRedSocial(obj, function(err){
+              if(err) return done(null, false);
+              return done(null, obj);
+            })
+          } else {
+            return done(null, registros[0]);
+          }
+        })
+}));
 
 
 // uncomment after placing your favicon in /public
