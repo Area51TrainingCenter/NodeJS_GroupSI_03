@@ -42,6 +42,30 @@ router.get("/googleCB",
   )
 );
 
+// Rutas de autenticación con Twitter
+router.get("/login-twitter",
+    passport.authenticate('twitter')
+);
+router.get("/twitterCB",
+    passport.authenticate('twitter',
+      { successRedirect: '/home',
+        failureRedirect: '/'
+      }
+  )
+);
+
+// Rutas de autenticación con Github
+router.get("/login-github",
+    passport.authenticate('github')
+);
+router.get("/githubCB",
+    passport.authenticate('github',
+      { successRedirect: '/home',
+        failureRedirect: '/'
+      }
+  )
+);
+
 router.get("/logout", controlador.logout);
 
 module.exports = router;

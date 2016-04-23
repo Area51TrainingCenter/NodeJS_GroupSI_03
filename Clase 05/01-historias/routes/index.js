@@ -35,7 +35,7 @@ router.get("/home", function(req, res){
 
 	res.render("home", datos);*/
 
-	res.send("Entró");
+	//res.send("Entró");
 })
 
 module.exports = router;

@@ -3,6 +3,7 @@ var modelo = require("../modelos/modeloUsuarios");
 var controlador = {};
 
 controlador.logout = function(req, res) {
+	req.logout();
 	req.session.usuario=null;
 	res.redirect("/");
 }

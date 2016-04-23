@@ -12,6 +12,8 @@ var passport = require("passport");
 var passportLocal = require("passport-local").Strategy;
 var passportFacebook = require("passport-facebook").Strategy;
 var passportGoogle = require("passport-google-oauth2").Strategy;
+var passportTwitter = require("passport-twitter").Strategy;
+var passportGithub = require("passport-github").Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -133,6 +135,64 @@ passport.use(new passportGoogle({
         })
 }));
 
+//PASSPORT TWITTER
+passport.use(new passportTwitter(
+  {
+    consumerKey      : credenciales.twitter.clavePublica,
+    consumerSecret   : credenciales.twitter.clavePrivada,
+    callbackURL  : credenciales.twitter.rutaCB
+  }, 
+   function(accessToken, refreshToken, profile, done){
+
+      modelo.validarRedSocial(profile.id, function(err, registros){
+          if(err) {return done(err);}
+
+          if(registros.length==0) {
+            var obj = {};
+            obj.perfilid = profile.id;
+            obj.credsocial = profile.provider;
+            obj.cnombre = profile.displayName;
+            obj.cfoto = profile.photos[0].value;
+
+            modelo.insertarRedSocial(obj, function(err){
+              if(err) return done(null, false);
+              return done(null, obj);
+            })
+          } else {
+            return done(null, registros[0]);
+          }
+        })
+   }
+));
+
+///////////////////////////////
+// ESTRATEGIA CON GITHUB
+///////////////////////////////
+passport.use(new passportGithub({
+  clientID      : credenciales.github.clavePublica,
+  clientSecret  : credenciales.github.clavePrivada,
+  callbackURL  : credenciales.github.rutaCB
+}, function(accessToken, refreshToken, profile, done) {
+
+      modelo.validarRedSocial(profile.id, function(err, registros){
+          if(err) {return done(err);}
+
+          if(registros.length==0) {
+            var obj = {};
+            obj.perfilid = profile.id;
+            obj.credsocial = profile.provider;
+            obj.cnombre = profile.displayName;
+            obj.cfoto = profile._json.avatar_url;
+
+            modelo.insertarRedSocial(obj, function(err){
+              if(err) return done(null, false);
+              return done(null, obj);
+            })
+          } else {
+            return done(null, registros[0]);
+          }
+        })
+}));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
