@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nombre Producto</th>
+						<th>Acción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% reg.forEach(function(registro){ %>
+					<tr>
+						<td><%= reg.idProducto %></td>
+						<td><%= reg.nombreProducto %></td>
+						<td>
+							<a href="/" class="btn btn-info">Editar</a>&nbsp;<a href="/" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+					<% }) %>
+				</tbody>
+
+			</table>
+
+		</div>
+	</div>
+</div>
