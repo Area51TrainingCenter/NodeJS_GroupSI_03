@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			
+			<div class="panel">
+				<div class="panel-heading">
+					Editar Producto
+				</div>
+				<div class="panel-body">
+					<form action="/productos/editar/<%= reg[0].idProducto %>" method="post">
+						<div class="form-group">
+							<input type="text" name="nombreProducto" class="form-control" placeholder="Nombre de producto" value="<%= reg[0].nombreProducto %>" />
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-block btn-lg btn-success">Editar</button>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

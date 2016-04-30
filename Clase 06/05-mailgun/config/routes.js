@@ -36,7 +36,6 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -47,39 +46,20 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  "get /productos": {
-      controller: "ProductosController",
-      action: "redireccionarLista"
+  "get /enviar/texto": {
+      controller: "CorreosController",
+      action: "enviarTexto"
   },
 
-  "get /productos/:pag": {
-      controller: "ProductosController",
-      action: "listar"
+  "get /enviar/html": {
+      controller: "CorreosController",
+      action: "enviarHTML"
   },
 
-  "get /productos/formAgregar": {
-      controller: "ProductosController",
-      action: "formAgregar"
-  },
+  "get /enviar/adjunto": {
+      controller: "CorreosController",
+      action: "enviarAdjunto"
+  }  
 
-  "post /productos/insertar": {
-      controller: "ProductosController",
-      action: "insertar"
-  },
-
-  "get /productos/eliminar/:id": {
-      controller: "ProductosController",
-      action: "eliminar"
-  },
-
-  "get /productos/formEditar/:id": {
-      controller: "ProductosController",
-      action: "formEditar"
-  },
-
-  "post /productos/editar/:id": {
-      controller: "ProductosController",
-      action: "editar"
-  }, 
 
 };

@@ -16,13 +16,21 @@
 						<td><%= registro.idProducto %></td>
 						<td><%= registro.nombreProducto %></td>
 						<td>
-							<a href="/" class="btn btn-info">Editar</a>&nbsp;<a href="/productos/eliminar/<%= registro.idProducto %>" class="btn btn-danger">Eliminar</a>
+							<a href="/productos/formEditar/<%= registro.idProducto %>" class="btn btn-info">Editar</a>&nbsp;<a href="/productos/eliminar/<%= registro.idProducto %>" class="btn btn-danger">Eliminar</a>
 						</td>
 					</tr>
 					<% }) %>
 				</tbody>
 
 			</table>
+
+			<nav>
+				<ul class="pagination">
+				<% for(var i=1; i<=paginas; i++) { %>
+					<li class="<% if(i==paginaActual){ %><%= "active" %><% } %>"><a href="/productos/<%= i %>"><%= i %></a></li>
+				<% } %>
+				</ul>
+			</nav>
 
 			<a href="/productos/formAgregar" class="btn btn-success btn-block btn-lg">Agregar</a>
 
