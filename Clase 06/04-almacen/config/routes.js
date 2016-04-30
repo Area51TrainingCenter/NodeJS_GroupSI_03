@@ -34,7 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +46,25 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  "get /productos": {
+      controller: "ProductosController",
+      action: "listar"
+  },
+
+  "get /productos/formAgregar": {
+      controller: "ProductosController",
+      action: "formAgregar"
+  },
+
+  "post /productos/insertar": {
+      controller: "ProductosController",
+      action: "insertar"
+  },
+
+  "get /productos/eliminar/:id": {
+      controller: "ProductosController",
+      action: "eliminar"
+  }
 
 };

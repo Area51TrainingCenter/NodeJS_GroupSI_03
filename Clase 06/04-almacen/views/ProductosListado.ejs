@@ -13,16 +13,18 @@
 				<tbody>
 					<% reg.forEach(function(registro){ %>
 					<tr>
-						<td><%= reg.idProducto %></td>
-						<td><%= reg.nombreProducto %></td>
+						<td><%= registro.idProducto %></td>
+						<td><%= registro.nombreProducto %></td>
 						<td>
-							<a href="/" class="btn btn-info">Editar</a>&nbsp;<a href="/" class="btn btn-danger">Eliminar</a>
+							<a href="/" class="btn btn-info">Editar</a>&nbsp;<a href="/productos/eliminar/<%= registro.idProducto %>" class="btn btn-danger">Eliminar</a>
 						</td>
 					</tr>
 					<% }) %>
 				</tbody>
 
 			</table>
+
+			<a href="/productos/formAgregar" class="btn btn-success btn-block btn-lg">Agregar</a>
 
 		</div>
 	</div>

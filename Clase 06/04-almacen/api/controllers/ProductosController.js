@@ -11,10 +11,11 @@ module.exports = {
 
 		Productos
 			.find()
-			.then(function(err, registros) {
+			.then(function(registros) {
 				var data = {
 					reg: registros
 				};
+
 				res.view("ProductosListado", data);
 			})
 			.catch(function(err){
@@ -24,8 +25,16 @@ module.exports = {
 	},
 
 	insertar: function(req, res) {
+		var datos = req.allParams();
 
-	},
+		Productos
+			.create(datos)
+			.then(function(registros){
+				res.redirect("/productos");
+			})
+			.catch(function(err){
+				res.negotiate(err)
+			});	},
 
 	actualizar: function(req, res) {
 
@@ -37,6 +46,10 @@ module.exports = {
 
 	eliminar: function(req, res) {
 
+	},
+
+	formAgregar: function(req, res) {
+		res.view("ProductoAgregar");
 	}
 	
 };
