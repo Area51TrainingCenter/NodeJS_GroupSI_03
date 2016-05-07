@@ -1,0 +1,27 @@
+<div class="container" ng-controller="controlador as ctrl">
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Estado</td>
+					<td>Médico</td>
+					<td>Paramédico</td>
+					<td>Piloto</td>
+					<td>Acción</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="ambulancia in ctrl.listaAmbulancias">
+					<td>{{ambulancia.id}}</td>
+					<td><input type="text" ng-model="ambulancia.estado" /></td>
+					<td><input type="text" ng-model="ambulancia.medico" /></td>
+					<td><input type="text" ng-model="ambulancia.paramedico" /></td>
+					<td><input type="text" ng-model="ambulancia.piloto" /></td>
+					<td><button type="button" ng-click="ctrl.actualizar(ambulancia)">Actualizar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
