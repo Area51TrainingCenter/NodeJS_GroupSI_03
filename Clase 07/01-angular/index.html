@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<style>
+			[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			  display: none !important;
+			}
+
+			.editando {
+				background-color: yellow;
+			}
+
+			.editado {
+				background-color: green;
+			}
+		</style>	
+
+	</head>
+	<body ng-controller="controlador as ctrl" ng-cloak>
+
+		<input type="text" ng-model="ctrl.nombre" /><br>
+		{{ctrl.nombre}}
+
+		<table>
+			<tr ng-repeat="usuario in ctrl.listaUsuarios" ng-class="{editando: usuario.editando, editado: usuario.editado}" ng-show="!usuario.eliminado">
+				<td>{{usuario.usuario}}</td>
+				<td>{{usuario.contrasena}}</td>
+				<td><a href ng-click="ctrl.editar(usuario)">Editar</a>
+				<a href ng-click="ctrl.eliminar(usuario)">Eliminar</a>
+				</td>
+			</tr>
+		</table>
+		
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
