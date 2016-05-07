@@ -14,22 +14,30 @@
 				background-color: green;
 			}
 		</style>	
-
+		<meta charset="utf8">
 	</head>
-	<body ng-controller="controlador as ctrl" ng-cloak>
+	<body ng-cloak>
+		<div ng-controller="controlador as ctrl">
+			<input type="text" ng-model="ctrl.nombre" /><br>
+			{{ctrl.nombre}}
 
-		<input type="text" ng-model="ctrl.nombre" /><br>
-		{{ctrl.nombre}}
+			<table>
+				<tr ng-repeat="usuario in ctrl.listaUsuarios" ng-class="{editando: usuario.editando, editado: usuario.editado}" ng-show="!usuario.eliminado">
+					<td>{{usuario.usuario}}</td>
+					<td>{{usuario.contrasena}}</td>
+					<td><a href ng-click="ctrl.editar(usuario)">Editar</a>
+					<a href ng-click="ctrl.eliminar(usuario)">Eliminar</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 
-		<table>
-			<tr ng-repeat="usuario in ctrl.listaUsuarios" ng-class="{editando: usuario.editando, editado: usuario.editado}" ng-show="!usuario.eliminado">
-				<td>{{usuario.usuario}}</td>
-				<td>{{usuario.contrasena}}</td>
-				<td><a href ng-click="ctrl.editar(usuario)">Editar</a>
-				<a href ng-click="ctrl.eliminar(usuario)">Eliminar</a>
-				</td>
-			</tr>
-		</table>
+		<div ng-controller="controladorEdicion as ctrl">
+			<a href ng-click="ctrl.mostrar()">mostrar</a><br>
+			Usuario: {{ctrl.usuario.usuario}}<br>
+			Contraseña: {{ctrl.usuario.contrasena}}
+
+		</div>
 		
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="js/main.js"></script>

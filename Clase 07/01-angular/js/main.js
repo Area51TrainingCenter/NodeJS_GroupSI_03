@@ -1,6 +1,6 @@
 angular
 	.module("app", [])
-	.controller("controlador", function(){
+	.controller("controlador", ["httpUsuarios", "$scope", function(httpUsuarios, $scope){
 		this.nombre = "";
 
 		this.listaUsuarios = [
@@ -21,11 +21,33 @@ angular
 			} else {
 				usuario.editado = true;
 			}
+
+				httpUsuarios.usuarioSeleccionado = usuario;
+
 			
 			// usuario.usuario = prompt("Ingrese un nuevo valor de usuario");
 			//this.editando = false;
 		}
+	}])
+	.factory("httpUsuarios", function(){
+		var obj = {};
+		obj.usuarioSeleccionado = {};
+		obj.listar = function(){};
+		obj.eliminar = function(){};
+		obj.actualizar = function(){};
+		obj.editar = function(){};
+
+		return obj;
 	})
+	.controller("controladorEdicion", ["httpUsuarios", function(httpUsuarios){
+
+		this.mostrar = function(){
+			this.usuario = httpUsuarios.usuarioSeleccionado;
+		}
+
+		// this.usuario = {usuario: ... , contrasena: ...}
+
+	}]);
 	// .controller("controller", ["$http", function($http){
 
 	// }])
