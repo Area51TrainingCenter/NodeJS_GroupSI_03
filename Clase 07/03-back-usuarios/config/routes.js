@@ -39,7 +39,23 @@ module.exports.routes = {
   "get /listar": {
     controller: "UsuariosController",
     action: "listar"
+  },
+
+  "put /actualizar/:id": {
+    controller: "UsuariosController",
+    action: "actualizar"
+  },
+
+  "delete /eliminar/:id": {
+    controller: "UsuariosController",
+    action: "eliminar"
+  },
+
+  "post /insertar": {
+    controller: "UsuariosController",
+    action: "insertar"
   }
+
 
   /***************************************************************************
   *                                                                          *

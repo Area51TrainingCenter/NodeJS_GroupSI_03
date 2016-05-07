@@ -30,12 +30,28 @@
 					</td>
 				</tr>
 			</table>
+			<a href ng-click="ctrl.accion=1;ctrl.usuarioEscogido={}">Agregar</a>
+
+			<fieldset ng-hide="ctrl.accion==-1">
+				<legend>
+					<span ng-show="ctrl.accion==0">Edición</span>
+					<span ng-show="ctrl.accion==1">Inserción</span>
+				</legend>
+				<form>
+					<label>Usuario</label>
+					<input type="text" ng-model="ctrl.usuarioEscogido.usuario"><br>
+					<label>Contraseña</label>
+					<input type="text" ng-model="ctrl.usuarioEscogido.contrasena"><br>
+					<button ng-click="ctrl.ejecutar()">Ejecutar</button>
+				</form>
+			</fieldset>
+
 		</div>
 
-		<div ng-controller="controladorEdicion as ctrl">
+	<!-- 	<div ng-controller="controladorEdicion as ctrl">
 			<a href ng-click="ctrl.mostrar()">mostrar</a><br>
 			Usuario: {{ctrl.usuario.usuario}}<br>
-			Contraseña: {{ctrl.usuario.contrasena}}
+			Contraseña: {{ctrl.usuario.contrasena}} -->
 
 		</div>
 		
