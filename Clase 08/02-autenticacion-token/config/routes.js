@@ -33,52 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: "formLogin"
-  },
-
-  'post /login': {
-    controller: "AuthController",
-    action: "login"
-  },
-
-  'get /logout': {
-    controller: "AuthController",
-    action: "logout"
-  },
-
-  'get /listar': {
-    controller: "UsuariosController",
-    action: "listar"
-  },
-
-  "post /insertar": {
-    controller: "UsuariosController",
-    action: "insertar"
-  },
-
-  "get /eliminar/:id": {
-    controller: "UsuariosController",
-    action: "eliminar"
-  },
-
-  "get /editar/:id": {
-    controller: "UsuariosController",
-    action: "editar"
-  },
-
-  "post /actualizar/:id": {
-    controller: "UsuariosController",
-    action: "actualizar"
-  },
-
-  "get /formInsertar": {
-    controller: "UsuariosController",
-    action: "formInsertar"
-  },
-  
-  "post /reporte-usuarios": {
-    controller: "ReportesController",
-    action: "repListadoUsuarios"
+    view: 'homepage'
   }
 
   /***************************************************************************

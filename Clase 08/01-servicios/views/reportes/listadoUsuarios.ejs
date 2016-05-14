@@ -4,14 +4,23 @@
 	<meta charset="utf8">
 </head>
 <body>
-	<table>
+	<table style="width:700px;font-size:10px">
 		<thead>
 			<tr>
-				<td>ID</td>
-				<td>Usuario</td>
-				<td>Contraseña</td>
+				<td style="width:100px">ID</td>
+				<td style="width:200px">Usuario</td>
+				<td style="width:400px">Contraseña</td>
 			</tr>
 		</thead>
+		<tbody>
+			<% registros.forEach(function(item){ %>
+			<tr>
+				<td style="width:100px"><%= item.idUsuario %></td>
+				<td style="width:200px"><%= item.nombreUsuario %></td>
+				<td style="width:400px"><%= item.contrasena %></td>
+			</tr>
+			<% }) %>
+		</tbody>
 	</table>
 
 </body>
