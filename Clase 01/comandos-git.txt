@@ -7,3 +7,5 @@ Para recibir las actualizaciones o modificaciones
 git pull origin master
 
 En este ùltimo comando hay que estar dentro de la carpeta del repositorio
+
+Correo: sergiohidalgocaceres@gmail.com
