@@ -26,7 +26,25 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': false,
+
+  UsuariosController: {
+    "*": false,
+    insertar: ["sessionAuth", "usuarioValido"],
+    eliminar: "sessionAuth",
+    actualizar: "sessionAuth",
+    listar: "sessionAuth",
+    editar: "sessionAuth",
+    formInsertar: "sessionAuth"
+  },
+
+  AuthController: {
+    "*": true
+  },
+
+  ReportesController: {
+    "*": true
+  }
 
   /***************************************************************************
   *                                                                          *

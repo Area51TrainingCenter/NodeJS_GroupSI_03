@@ -20,7 +20,7 @@ module.exports = {
 					0
 				);
 
-				res.redirect("/");
+				res.redirect("/listar");
 			})
 			.catch(function(err){
 				res.negotiate(err);
@@ -39,7 +39,7 @@ module.exports = {
 					registros[0].idUsuario, 
 					0
 				);
-				res.redirect("/");				
+				res.redirect("/listar");				
 			})
 			.catch(function(err){
 				res.negotiate(err);
@@ -59,7 +59,7 @@ module.exports = {
 					registros[0].idUsuario, 
 					0
 				);
-				res.redirect("/");				
+				res.redirect("/listar");				
 			})
 			.catch(function(err){
 				res.negotiate(err);
@@ -99,7 +99,7 @@ module.exports = {
 					}
 					res.view("formEditar", data);
 				} else {
-					res.redirect("/");
+					res.redirect("/listar");
 				}
 			})
 	},

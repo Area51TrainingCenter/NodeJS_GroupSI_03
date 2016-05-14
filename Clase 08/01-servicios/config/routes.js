@@ -33,6 +33,20 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
+    view: "formLogin"
+  },
+
+  'post /login': {
+    controller: "AuthController",
+    action: "login"
+  },
+
+  'get /logout': {
+    controller: "AuthController",
+    action: "logout"
+  },
+
+  'get /listar': {
     controller: "UsuariosController",
     action: "listar"
   },
@@ -60,6 +74,11 @@ module.exports.routes = {
   "get /formInsertar": {
     controller: "UsuariosController",
     action: "formInsertar"
+  },
+  
+  "/reporte-usuarios": {
+    controller: "ReportesController",
+    action: "repListadoUsuarios"
   }
 
   /***************************************************************************
