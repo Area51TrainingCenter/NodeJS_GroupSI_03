@@ -33,7 +33,28 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    controller: "UsuariosController",
+    action: "listar"
+  },
+
+  "post /insertar": {
+    controller: "UsuariosController",
+    action: "insertar"
+  },
+
+  "get /eliminar/:id": {
+    controller: "UsuariosController",
+    action: "eliminar"
+  },
+
+  "get /editar/:id": {
+    controller: "UsuariosController",
+    action: "editar"
+  },
+
+  "post /actualizar/:id": {
+    controller: "UsuariosController",
+    action: "actualizar"
   }
 
   /***************************************************************************
