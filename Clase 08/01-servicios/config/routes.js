@@ -55,6 +55,11 @@ module.exports.routes = {
   "post /actualizar/:id": {
     controller: "UsuariosController",
     action: "actualizar"
+  },
+
+  "get /formInsertar": {
+    controller: "UsuariosController",
+    action: "formInsertar"
   }
 
   /***************************************************************************

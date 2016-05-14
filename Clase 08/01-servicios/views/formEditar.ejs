@@ -3,13 +3,13 @@
 		<div class="col-md-6">
 			<form action="/actualizar/<%= registro.idUsuario %>" method="post">
 				<div class="form-group">
-					<input type="text" class="form-control" name="nombreUsuario" value="<%= registro.nombreUsuario %>" />
+					<input type="text" class="form-control" placeholder="Nombre de usuario" name="nombreUsuario" value="<%= registro.nombreUsuario %>" />
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="contrasena" value="<%= registro.contrasena %>" />
+					<input type="text" class="form-control" placeholder="Contraseña" name="contrasena" value="<%= registro.contrasena %>" />
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-block btn-sucess form-control">Grabar</button>
+					<button type="submit" class="btn btn-block btn-success form-control">Grabar</button>
 				</div>
 			</form>
 

@@ -12,13 +12,14 @@ module.exports = {
 
 		Usuarios
 			.create(data)
-			.then(function(registros){
+			.then(function(registro){
 				ServicioLog.Registrar(
 					sails.config.acciones.INSERTAR, 
 					sails.config.tablas.USUARIOS,
-					registros[0].idUsuario, 
+					registro.idUsuario, 
 					0
 				);
+
 				res.redirect("/");
 			})
 			.catch(function(err){
