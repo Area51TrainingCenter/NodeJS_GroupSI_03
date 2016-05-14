@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Usuario</th>
+						<th>Acción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% registros.forEach(function(item){ %>
+					<tr>
+						<td><%= item.idUsuario %></td>
+						<td><%= item.nombreUsuario %></td>
+						<td>
+							<a href="/editar/<%= item.idUsuario %>" class="btn btn-success">Editar</a>&nbsp;|&nbsp;
+							<a href="/eliminar/<%= item.idUsuario %>" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+					<% }) %>
+				</tbody>
+
+			</table>
+
+
+		</div>
+
+	</div>
+</div>

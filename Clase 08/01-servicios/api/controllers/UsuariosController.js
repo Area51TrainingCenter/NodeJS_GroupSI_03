@@ -69,13 +69,17 @@ module.exports = {
 		Usuarios
 			.find()
 			.then(function(registros){
+				var data = {registros: registros};
+
 				ServicioLog.Registrar(
 					sails.config.acciones.LISTAR, 
 					sails.config.tablas.USUARIOS, 
 					-1, 
 					0
 				);
-				res.redirect("/");				
+
+				res.view("formListar", data);
+								
 			})
 			.catch(function(err){
 				res.negotiate(err);
