@@ -9,8 +9,8 @@ var JwtStrategy = require('passport-jwt').Strategy;
 var EXPIRES_IN_SECONDS = 60 * 60 * 24;
 var SECRET = process.env.tokenSecret || "45j5adfhasdfadf3blkamc87371JDJme8xxx84583asCDDD?xzyaz893j0987@#";
 var ALGORITHM = "HS256";
-var ISSUER = "sistema.misionmedicaperu.com";
-var AUDIENCE = "sistema.misionmedicaperu.com";
+var ISSUER = "mi_dominio.com";
+var AUDIENCE = "mi_dominio.com";
  
 var LOCAL_STRATEGY_CONFIG = {
   usernameField: 'email',
